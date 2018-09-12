@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Star Jedi Rounded';
+    src: url('StarJediRounded.woff2') format('woff2'),
+        url('StarJediRounded.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

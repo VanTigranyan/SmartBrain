@@ -3,3 +3,7 @@
   border-radius: .5rem;
   background-image: linear-gradient(to right,#ad59ff,#7659ff);
 }
+
+h2 {
+  font-family: 'Star Jedi Rounded'
+}
