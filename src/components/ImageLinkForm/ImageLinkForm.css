@@ -1,0 +1,33 @@
+.button {
+  background-image: linear-gradient(to right, #24bdff, #2499ff);
+  border: none;
+  box-shadow: 0 3px 0 0 #0087db, 0 2px 8px 0 #009dff, 0 4px 10px 0 rgba(33, 7, 77, .5);
+  border-radius: 0 .5rem .5rem 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+input {
+  border-radius: .5rem 0 0 .5rem;
+  border: none;
+  box-shadow: 0 3px 0 0 #0087db, 0 2px 8px 0 #009dff, 0 4px 10px 0 rgba(33, 7, 77, .5);
+}
+
+/* .wrap {
+    background-color: #026873;
+    background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+  box-shadow: 0 3px 0 0 #0087db, 0 2px 8px 0 #009dff, 0 4px 10px 0 rgba(33, 7, 77, .5);
+} */
+
+.wrap {
+  background-image: linear-gradient(to right, #b970ff, #8970ff);
+  box-shadow: 0 3px 0 0 #7e4ddb, 0 2px 8px 0 #9259ff, 0 4px 10px 0 rgba(33, 7, 77, .5);
+  border-radius: .5rem;
+}
+
+.form {
+  width: 700px;
+}
