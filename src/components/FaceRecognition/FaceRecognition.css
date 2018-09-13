@@ -1,5 +1,6 @@
 .face {
   box-shadow: 0 3px 0 0 #0087db, 0 2px 8px 0 #009dff, 0 4px 10px 0 rgba(33, 7, 77, .5);
+  font-size: 0;
 }
 
 img {
