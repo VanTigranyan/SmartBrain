@@ -64,7 +64,6 @@ class App extends Component {
   }
 
   calculateFaceLocation = data => {
-    console.log(data);
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById("inputImage");
@@ -80,19 +79,16 @@ class App extends Component {
   };
 
   displayFaceBox = box => {
-    console.log(box);
     this.setState({ box: box });
   };
 
   onInputChange = event => {
-    console.log(event.target.value);
     this.setState({
       input: event.target.value
     });
   };
 
   onButtonSubmit = () => {
-    console.log("click");
     this.setState({
       imageUrl: this.state.input
     });
