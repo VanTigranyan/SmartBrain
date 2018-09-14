@@ -1,44 +1,48 @@
 import React from "react";
-import './SignIn.css'
+import "./SignIn.css";
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: '',
-      signInPassword: ''
-    }
+      signInEmail: "",
+      signInPassword: ""
+    };
   }
 
-  onEmailChange = (event) => {
+  onEmailChange = event => {
     this.setState({
       signInEmail: event.target.value
-    })
-  }
+    });
+  };
 
-  onPasswordChange = (event) => {
+  onPasswordChange = event => {
     this.setState({
       signInPassword: event.target.value
-    })
-  }
+    });
+  };
 
   onSubmitSignin = () => {
-    fetch('http://localhost:5000/signin', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
+    if (this.state.signInEmail && this.state.signInPassword) {
+      fetch("http://localhost:5000/signin", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: this.state.signInEmail,
+          password: this.state.signInPassword
+        })
       })
-    })
-    .then( response => response.json())
-    .then(user => {
-      if(user.id) {
-        this.props.loadUser(user);
-        this.props.onRouteChange('home')
-      }
-    })
-  }
+        .then(response => response.json())
+        .then(user => {
+          if (user.id) {
+            this.props.loadUser(user);
+            this.props.onRouteChange("home");
+          }
+        });
+    } else {
+      console.error('Form\'s fields are not filled')
+    }
+  };
 
   render() {
     const { onRouteChange } = this.props;
@@ -84,7 +88,7 @@ class SignIn extends React.Component {
             </div>
             <div className="lh-copy mt3">
               <p
-                onClick={() => onRouteChange('register')}
+                onClick={() => onRouteChange("register")}
                 className="f6 link dim black db pointer"
               >
                 Register
@@ -95,6 +99,6 @@ class SignIn extends React.Component {
       </article>
     );
   }
-};
+}
 
 export default SignIn;

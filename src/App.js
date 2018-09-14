@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Clarifai from "clarifai";
 import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
@@ -39,10 +38,6 @@ const initialState = {
     joined: ""
   }
 };
-
-const app = new Clarifai.App({
-  apiKey: "26c8120c9056421aac50883fa812f7a0"
-});
 
 class App extends Component {
   constructor() {
@@ -92,8 +87,14 @@ class App extends Component {
       imageUrl: this.state.input
     });
 
-    app.models
-      .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+    fetch("http://localhost:5000/imageurl", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: this.state.input
+      })
+    })
+      .then(data => data.json())
       .then(response => {
         if (response) {
           fetch("http://localhost:5000/image", {
